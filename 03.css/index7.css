@@ -1,0 +1,52 @@
+div {
+    width :100px;
+    height : 100px;
+    font-weight : 700px;
+    text-align: center;
+    line-height: 100px;
+}
+
+
+.position-absolute {
+    position:absolute
+}
+/* z - index는
+   -레이어 효과를 나타내준다 : 겹겹이 쌓이게 만드는 속성이다
+   -숫자 지정이 가능하다 -> 숫자가 클수록 위로 배치 된다 (z 측 기준)
+   -양수 음수 모두 가능
+   -auto 기본 값 */
+
+
+.div1 {
+    top : 100px;
+    left: 100px;
+    background-color: red;
+    z-index:8;
+}
+.div2 {
+    top: 140px;
+    left : 140px;
+    background-color:  orange;
+    z-index:6;
+}
+
+.div3 {
+    top : 180px;
+    left: 180px;
+    background-color: yellow;
+    z-index:-10;
+}
+
+.div4 {
+    top : 220px;
+    left : 220px;
+    background-color: green;
+    z-index:5;
+}
+
+.div5 {
+    top : 260px;
+    left : 260px;
+    background-color: blue;
+    z-index:5;
+}

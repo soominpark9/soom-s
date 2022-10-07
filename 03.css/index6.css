@@ -1,0 +1,89 @@
+body {
+    margin:0;
+    padding:0;
+
+    height : 2000px;
+    background-color: aliceblue;
+
+}
+
+div {
+    width:100px;
+    height:100px;
+    font-weight: 700;
+    /* 수평 중앙 */
+    text-align:center;  
+    /* 수직 중앙 */
+    line-height:100px;
+}
+
+/* position : static(기본 값)
+   - 기본값 : 굳이 작성 안해도된다 
+   - inline ; 왼쪽 -> 오른쪽 쌓임
+   - block; 위 -> 아래 쌓임 */
+
+
+   
+.position-static{
+    background-color: pink;
+    /* position : static; -> 명시적으로 작성 하지 않아도됨 */
+}
+
+/* position-relative (상대 위치)
+   - 자신이 원래 있어야 하는 위치 기준
+   - top: 위로부터의 여백 값 (위로부터 100px을 띄워준다)
+   - bottom: 아래로 부터의 여백 값 이미지 위로 겹쳐서 올라갈 수 도 있다.
+   - right:
+   - left:
+    */
+.position-relative {
+    background-color: aquamarine;
+    position:relative;
+    /* left:100px; */
+}
+
+
+/* position : absolute (절대위치)
+
+    누구를 기준?
+    body태그 기준
+    - relative 값을 갖는 가장 가까운 조상이 있다면 , 해당 요소 기준으로 위치를 설정 한다
+    - relative 값을 갖는 조상이 없다면, body태그 기준으로 위치 설정 한다
+    - 기준으로 부터top , bottom, right, left중에 하나 이상 지정*/
+.position-absolute {
+    background-color: gold;
+    position: absolute;
+/* 
+    i) body 태그 기준 ( 조상 요소 중에 position: relative 없을때)
+    top : 0;
+    bottpm : 0;
+    right : 0;
+   
+    left : 0; 
+    
+    ii) 조상 요소 중에 position: relative 가 없는 경우 */
+    bottom : 0;
+   /* absolute의 경우 bottom을 0으로 해놔도 스크롤을 내리면 따라오지 않고 
+   첫 화면에 아래에 있어도 스크롤을 내리면 따라오지 않고 첫 장면에 있는다 */
+} 
+
+
+/* position:fixed (고정위치)
+     -viewport를 기준으로 특정 위치에 배치 된다
+        * viewport란 ? */
+/* absolute와 반대로 fixed의 경우 아무리 화면을 건드리고 내리고 올려도 
+bottom을 0으로 해두면 항상 아래에 있는데 
+약간 헤더랑 풋터 만들때 사용하는 ....!? */
+
+
+.position-fixed {
+    background: coral;
+    position:fixed;
+    /* top :0; */
+    bottom :0;
+}
+
+
+
+
+

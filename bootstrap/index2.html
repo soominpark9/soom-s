@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN link (css) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Bootstrap Utilities</h1>
+
+    <!-- background color 
+    mb-2 bg-primary  -> 백그라운드 색상
+    p-3 : padding 3
+    mb-3 : margin-bottom 3
+    text-white :color white-->
+    <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+    <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+    <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+    <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+    <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+    <div class="p-3 mb-2 bg-info text-dark">.bg-info</div>
+    <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+    <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+    <div class="p-3 mb-2 bg-body text-dark">.bg-body</div>
+    <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+    <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+
+    <!--border
+    border-bottom -> bottom만 주겠다
+    border-bottom-0  -> bottom뺴고 효과주겠다-->
+    <span class="border border-primary border-top-0">Hello</span>
+    <span class="border border-primary border-bottom-0">Hello</span>
+    <span class="border-secondary border-bottom">Hello</span>
+    <span class="border border-success">Hello</span>
+    <span class="border border-danger">Hello</span>
+    <span class="border border-warning">Hello</span>
+    <span class="border border-info">Hello</span>
+    <span class="border border-light">Hello</span>
+    <span class="border border-dark">Hello</span>
+    <span class="border border-white">Hello</span>
+    
+    <!-- label 태그는 for속성과 id속성이 같아야함 
+    border-success를 지우면 경계선이 옅어짐-->
+    <div class="mb-4">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control border-danger" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+
+      <!-- color 
+       text-warning bg-dark : 글씨는 빨강 배경은 어둡게
+       text-bg-warning : 배경은 빨간색 텍스트색은 배경색에 맞춰 자동으로-->
+        <p class="text-primary">.text-primary</p>
+        <p class="text-secondary">.text-secondary</p>
+        <p class="text-success">.text-success</p>
+        <p class="text-danger">.text-danger</p>
+        <p class="text-warning bg-dark">.text-warning</p>
+        <p class="text-info bg-dark">.text-info</p>
+        <p class="text-light bg-dark">.text-light</p>
+        <p class="text-dark">.text-dark</p>
+        <p class="text-body">.text-body</p>
+        <p class="text-muted">.text-muted</p>
+        <p class="text-white bg-dark">.text-white</p>
+        <p class="text-black-50">.text-black-50</p>
+        <p class="text-white-50 bg-dark">.text-white-50</p>
+
+<!--  spacing (margin,padding)-->
+
+    <hr>
+    <div class="mb-5 text-bg-danger text-center">.box1</div>
+    <div class="py-3 text-bg-success text-center">.box2</div>
+     <br>
+     <br>
+
+    <!-- display: inline 
+     컨텐츠 만큼 너비 차지,
+    줄바꿈 x-->
+    <div class="d-inline p-2 text-bg-primary">d-inline</div>
+    <div class="d-inline p-2 text-bg-dark">d-inline</div>
+    <br>
+    <br>
+    <!-- display: inline block -
+        span태그지만 전체넓이 차지 하고, 줄바꿈 o
+    w-{size} : width : siza(0,25,50,75,100);
+    h-{size} : height : siza(0,25,50,75,100);-->
+    <span class="d-block-inline p-2 text-bg-primary w-50">d-block</span>
+    <span class="d-block-inline p-2 text-bg-dark w-25">d-block</span>
+
+    <!-- none 
+    :화면에서 사라지게 하는 요소-->
+    <span class="d-none p-2 text-bg-primary w-50">d-none</span>
+
+    <!-- display : flex; 
+    부모요소에 flex주면 자식요소들이 inline-block으로 바뀜
+justify-content-center -> justify-content:center (css
+align-items-center align-items:center (css)세로방향 센터-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="parent border border-info d-flex justify-content-center align-items-center " style="height: 300px;">
+    <div class="child text-bg-danger" style="width: 100px; height: 100px;">child</div>
+    <div class="child text-bg-primary" style="width: 100px; height: 100px;">child</div>
+    <div class="child text-bg-warning" style="width: 100px; height: 100px;">child</div>
+    </div>
+
+    <!--   -->
+
+
+
+    <!-- CDN link (js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

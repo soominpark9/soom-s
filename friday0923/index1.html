@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-display</title>
+    <link rel="stylesheet" href="./index1.css">
+</head>
+<body>
+    <h1>CSS - diaplay속성에 대해 알아보자!</h1>
+
+    <ul>
+        <li>요소를 화면에 어떻게 보여줄지 결정하는 속성</li>
+        <li>html 태그는 block과 inline 요소로 나눔</li>
+
+    </ul>
+
+    <hr>
+    <h2>inline</h2>
+    <ol>
+        <li>ex : span,a,img </li>
+        <li>content(내용물) 만큼 공간을 할당 -> width, height, padding, margin 을 사용할 수 없다</li>
+        <li>줄 바꿈 없이 바로 옆에 배치(기본적으로)</li>
+    </ol>
+
+    <div class="d-inline1">d-inline1 클래스를 갖는 div</div>
+    <div class="d-inline2">d-inline2</div>
+
+    <hr>
+
+    <h2>block</h2>
+
+    <ol>
+        <li>ex: div, p, ul, ol</li>
+        <li>한 줄을 다 차지함 -> width, height, padding, margin 사용이 자유롭다 ( 다 적용됨 )</li>
+    </ol>
+
+    <div class = "d-block1">d-block1 클래스를 갖는 div</div>
+    <div class= "d-block2">d-block2 클래스를 갖는 div</div>
+    
+    <hr>
+    <h2>inline-block</h2>
+    <ol>
+        <li>block 요소 처럼 크기 지정을 하되</li>
+        <li>inline 요소 처럼 다른 내용들과 같은 줄을 공유 하고 싶을 경우 사용한다</li>
+        <li>블록과 인라인 요소의 장점을 가진다</li>
+    </ol>
+
+    <div class="d-inline-block1">d-inline-block1 클래스를 갖는 div</div>
+    <div class="d-inline-block2">d-inline-block1 클래스를 갖는 div</div>
+
+    <hr>
+    <h2>none</h2>
+    <ol>
+<!-- 화면을 줄일때모바일로 숨겨야하는 요소들이 많을 거아님 그런식으로 요소를
+줄일때 자주 사용하는 none , 반응형 ㅇ웹? 같은곳?-->
+        <li>요소를 화면에 표시하지 않음</li>
+        <li>주의 ) display: none ; 요소가 차지하는 공간도 사라짐</li>
+        <li>요소를 그리지 않음 ( 랜더링 하지 않는다 = 그리지 않는다 )</li>
+    </ol>
+    <div class="d-none">
+        none
+    </div>
+</body>
+</html>
+

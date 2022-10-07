@@ -1,0 +1,28 @@
+
+
+p {
+position : relative;
+animation-name: relax;
+animation-duration: 3s;
+animation-timing-function: linear;
+
+
+}
+
+
+@keyframes relax {
+    from {
+        transform:translateX(100%);
+        width : 150%;
+    }
+   
+    
+    to {
+        transform:translateX(0);
+        width : 100%;
+    }
+    }
+
+    /* 넓이를 크게 했다가 넓이를 줄이면 알아서 줄바꿈이 일어난다  */
+
+/* linear을 쓰면 중간 값없어도됨 */

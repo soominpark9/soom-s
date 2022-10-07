@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bootstrap Demo</title>
+
+	<!-- CDN Link (css) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css
+	">
+    <!-- icon cdn  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<style>
+		body {
+			padding-bottom: 500px;
+		}
+        i {
+            font-size: 30px;
+            color: purple;
+        }
+        .heart-icon {
+            color:red;
+            font-size: 50px;
+            cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+	<h1>Bootstrap Icon을 불러오는 2가지 방법</h1>
+    <h2>i 태그로 적용</h2>
+    <!-- bi-{아이콘이름}
+    헤더옆 버튼안에 메뉴자체를 아이콘으로 보이게 하고 싶으면 메뉴의 li 태그안에 넣어주면사용가능 -->
+    <i class="bi bi-moon-stars"></i>
+
+
+	<br>
+	<br>
+	<br>
+	<h2>svg 태그로 적용</h2>
+    <!-- svg 태그란:
+    :크기 조정이 가능한 백터 그래픽 태그
+    -width, height : 크기 변경 가능
+    값을 1em(반응형 단위) 으로 설정한 경우, 부모 요소 크기에 맞게 변경된다
+    -fill :색상 변경 가능 -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="black" class="bi bi-moon-stars" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </svg>
+
+      <br>
+      <br>
+      <br>
+      <h2>아이콘 사용 예시</h2>
+      <i class="heart-icon bi bi-heart"></i>
+      <!-- <i class="bi bi-balloon-heart-fill"></i> -->
+
+	
+	<!-- CDN Link (js) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js
+	"></script>
+
+    <script>
+        // 색이 채워졌다가 안채워졌다가 하는 하트 만들기 쇼핑몰 메뉴클릭 장바구니 담기 클릭할때 색 바뀌는 버튼 에 많이 보잉ㅁ
+        const heart = document.querySelector('.heart-icon');
+        heart.addEventListener('click', function() {
+            heart.classList.toggle('bi-heart');
+            heart.classList.toggle('bi-heart-fill');
+        })
+    </script>
+</body>
+</html>

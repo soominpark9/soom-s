@@ -1,0 +1,167 @@
+<!-- table html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 태그</title>
+</head>
+<body>
+     <h1>가격표</h1>
+    <table border = "1" cellspacing = "5" cellpadding = "10">
+        <!-- <thead></thead>-->
+        <!-- <tfoot></tfoot> 애네들은 안써도 자동으로 들어가 있는다 내용이 -->
+        <tr>
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>비고</th>
+        </tr>
+        <tr>
+            <td>국물 떡볶이</td>
+            <td>5000원</td>
+            <td>2인 이상 주문 가능</td>
+        </tr>
+        <tr>
+            <td>오뎅탕</td>
+            <td>12000원</td>
+            <td>겨울 한정 메뉴</td>
+        </tr>
+        <tr>
+            <td>순대</td>
+            <td>3000원</td>
+            <td>2인분 부터 주문 가능</td>
+        </tr>
+        <tr>
+            <td>치즈 추가</td>
+            <td>2000원</td>
+            <td>전메뉴 추가 가능</td>
+        </tr>
+        <tr>
+            <td>아이스크림</td>
+            <td>무료</td>
+            <td>20000원 이상 주문 고객한정</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문방구</title>
+</head>
+<body>
+    <h1>가격 표</h1>
+    <table border = "3" cellspacing = "5" cellpadding ="7">
+
+        <tr>
+            <th>상품 이름</th>
+            <th>가격</th>
+            <th>비고</th>
+
+        </tr>
+        <tr>
+            <td>색연필</td>
+            <td>1000원</td>
+            <td>   -   </td>
+        </tr>
+        <tr>
+            <td>공책</td>
+            <td rowspan = "2">1000원</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>물감</td>
+            <!-- 행 통일시 합쳐질 칸의 td는 공백으로 두어야 올바르게 적용된다 -->
+            <td></td>
+        </tr>
+        <td colspan="3">스케치북(품절)</td>
+        
+
+    </table>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리표</title>
+</head>
+<body>
+    <h1>자리표</h1>
+    <table border = "1" cellspacing = "0" width = "100%" cellpadding ="50"> 
+        <!-- 위에 테이블 쓸때 가운데 정렬도 같이 적용 하면됨, 셀스페이싱을 0으로두면 언뜻보면 한줄 테이블 처럼 보임 -->
+
+
+        <tr>
+            <td colspan="2" style = "text-align: center;">1</td>
+            
+            <td style = "text-align: center;">2</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">3</td>
+            <td rowspan="3" style = "font-size: 50px; text-align: center;">4</td>
+            <td style = "text-align: center;">5</td>
+        </tr>
+        <tr>
+            <td rowspan = "2" height = " 40" style = "text-align: center;">6</td>
+            
+            <td rowspan ="2" style = "color : darkred ; font-size: 50px; text-align: center;" height = "120">7</td>
+        </tr>
+        
+
+
+
+
+    </table>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자리표2</h1>
+    <table border = "1" width = "500" height = "500" cellspacing ="0" cellpadding ="100" >
+        <tr>
+            <td style = "text-align: center;">1</td>
+            <td style = "text-align: center;">2</td>
+            <td rowspan = "2" style = "text-align: center;">3</td>
+            <td style = "text-align: center;">4</td>
+        </tr>
+
+        <tr>
+            <td colspan = "2" style = "text-align: center;">5</td>
+            <td rowspan = "2" style = "text-align: center;">6</td>
+        </tr>
+        <tr>
+            <td style = "text-align: center;">7</td>
+            <td colspan = "2" style = "text-align: center;">8</td>
+        </tr>
+
+
+
+
+    </table>
+</body>
+</html>
+
+
+
+

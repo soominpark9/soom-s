@@ -1,0 +1,111 @@
+.box {
+    width : 100px;
+    height : 100px;
+    background-color: cyan;
+
+    position : relative;
+/* animation 연결 */
+animation-name:moveX;
+animation-duration:2s;
+animation-iteration-count :5;
+animation-timing-function: linear;
+animation-delay:2s;
+}
+
+@keyframes moveX {
+    0% {left : 0px;
+    }
+    /* 25% {left : 200px;
+    } */
+
+    /* linear을 사용했기 때문에 얘는 뚝딱 뚝딱 안거림
+    만약 linear말고 다른애를 사용했으면 뚝딱 거렸을거임
+    글고 중간지점을 지정해두고 위아래를 안써도 linear의 경우 부드럽게 이어짐 */
+    50% {left : 400px;
+    }
+    /* 75% {left : 200px;
+    } */
+    100% {left : 0px;
+    }
+
+}
+
+
+
+
+
+
+
+.bounce-ball1 {
+    position : relative;
+    left:100px;
+    top: 0;
+    width:100px;
+    height : 100px;
+    border-radius: 50%;
+    background-color: #0f0;
+   
+
+    animation-name : bounce1;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+    /* alternative : 홀수 번째  -> 정방향 , 짝수 번째 -> 역방향(reverse) */
+    /* alternative 축양형
+    animation: name duration timing-function delay iteration-count direction 순서로 축약 
+    animation : bounce1 1s ease-out infinite alternate */
+}
+
+/* animation 연결 --> 연결 전에 animation에 대한 정의를 해야한다 */
+
+@keyframes bounce1 {
+    from {
+        top: 300px;
+    }
+to {
+    top : 100px;
+}
+
+}
+
+
+.bounce-ball2 {
+    width : 50px;
+    height : 50px;
+    background: red;
+    
+    animation-name : bounce2;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+
+    border-radius: 50%;
+    position: fixed;
+    
+}
+
+@keyframes bounce2 {
+    from {
+        bottom : 0;
+        animation-timing-function: ease-out;
+        /* 정상 속도 -> 천천히 속도 줄임 */
+    }
+    50% {
+        bottom : 600px;
+        animation-timing-function: ease-in;
+        /* 천천히 시작 -> 정상속도 */
+    }
+    to {
+        bottom: 0;
+    }
+    /* direction 함수를 사용하지 않고 하는 법은 keyframes에서 
+    각각 timing-function을 지정하는 것 */
+}
+
+/* fixed는아래에서 움직이는걸 만드려고 한거니까 시작점이top이아니라
+bottom으로 설정해야 한다 바보야 ㅠㅠㅠㅠㅠㅠ */
+/* from이랑 to 값이 똑같을땐 그냥 from,to {} 쓰면됨 */
+
+
+

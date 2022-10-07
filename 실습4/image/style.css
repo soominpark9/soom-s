@@ -1,0 +1,275 @@
+/* 
+  TODO: HTML 요소들의 크기는 미리 설정해 두었습니다.
+  position, animation 등을 활용하여 과제를 완성해주세요!
+*/
+body {
+  width: 100%;
+  animation-name: sky1;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  
+}
+
+section {
+  position: absolute;
+  width: 700px;
+  height: 450px;
+  
+  transform : translate(-60%, -40%);
+  top : 50%;
+  left:50%;
+  
+}
+
+section .sky {
+  position : relative;
+  width: 100%;
+  height: 100%;
+  
+  
+
+}
+
+section .sky .sun {
+  position: absolute;
+  top: -160px;
+  left: 0;
+  width: 180px;
+  margin-left: -90px;
+  animation-name : sun1;
+  animation-duration : 10s;
+ 
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+section .sky .moon {
+  position: absolute;
+  top: -160px;
+  left: 0;
+  margin-left: -80px;
+  width: 140px;
+  animation-name : moon1;
+  animation-duration : 10s;
+  transform : rotate(360deg);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+section .sky .cloud_1 {
+  position: absolute;
+  left: 0%;
+  top: -30px;
+ 
+  width: 160px;
+
+  animation-name : cloud3;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+
+  animation-iteration-count: infinite;
+  
+}
+
+section .sky .cloud_2 {
+  position: absolute;
+  top :  20px;
+  left: 12%;
+  animation-name : cloud4;
+ 
+  width: 90px;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  
+  animation-iteration-count: infinite;
+  
+}
+
+section .city .city_img {
+  width: 100%;
+  bottom :0;
+  position : absolute;
+}
+
+/* ANIMATION */
+/* 
+  TODO:.5종류의 애니메이션이 필요함
+  - sky: 배경색 변경 애니메이션
+  - sun: sun.png가 회전하는 애니메이션
+  - moon: moon.png가 회전하는 애니메이션
+  - cloud_1: 큰 구름이 좌우로 이동하는 애니메이션
+  - cloud_2: 작은 구름이 좌우로 이동하는 애니메이션
+*/
+
+/*
+  참고: 알아야 할 속성 소개
+  oapcity: 0 ~ 1 사이의 값으로 불투명도를 설정할 수 있음
+  - 0: 요소가 완전히 투명해 보이지 않음
+  - 0~1 사이의 값: 요소가 반투명해 뒤에 내용을 볼 수 있음
+  - 1: 요소가 불투명함 
+*/
+
+/*
+  참고: 배경 색상 종류
+  - background-color: #636888;
+  - background-color: #b1e1e2;
+  - background-color: #fcd2e2;
+  - background-color: #675577;
+  - background-color: #636888;
+*/
+
+@keyframes sky1{
+  from {
+    background-color: #636888;
+  
+  }
+
+  25% {
+    background-color: #b1e1e2;
+
+  }
+
+  50% {
+    background-color: #fcd2e2;
+
+  }
+
+  75% {
+    background-color: #675577;
+
+  }
+
+  to {
+    background-color: #636888;
+
+  }
+}
+
+@keyframes sun1 {
+  from {
+    transform: rotate(0);
+    opacity: 0;
+
+  }
+  25% {
+    opacity: 1;
+
+  }
+
+  50%{
+    opacity: 0;
+
+  }
+
+  75%{
+    opacity: 0;
+
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+
+}
+
+@keyframes moon1 {
+  from {
+    transform: rotate(0);
+    opacity: 0;
+
+  }
+  25% {
+    opacity: 0;
+
+  }
+
+  50%{
+    opacity: 0;
+
+  }
+
+  75%{
+    opacity: 1;}
+
+  to {
+      transform: rotate(360deg);
+      opacity: 0;
+  }
+
+}
+
+@keyframes cloud3 {
+  from { 
+    
+    left : 100px;
+    opacity: 0;
+    
+
+  }
+
+  25% {
+    left : 300px;
+    opacity: 1;
+  }
+
+    
+  50% {  
+    
+    left : 500px;
+    opacity: 0;
+   
+  }
+
+  75% {
+    left : 300px;
+    opacity: 1;
+  }
+  
+  to {  
+    
+    left : 100px;
+    opacity: 0;
+   
+  }
+
+
+}
+
+
+@keyframes cloud4 {
+  from { 
+    
+    left : 700px;
+    opacity: 0;
+    
+
+  }
+
+  25% {
+    left : 400px;
+    opacity: 1;
+  }
+
+    
+  50% {  
+    
+    left : 100px;
+    opacity: 0;
+   
+  }
+
+  75% {
+    left : 400px;
+    opacity: 1;
+  }
+  
+  to {  
+    
+    left : 700px;
+    opacity: 0;
+   
+  }
+
+
+}

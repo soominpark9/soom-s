@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bootstrap Demo</title>
+
+	<!-- CDN Link (css) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css
+	">
+
+	<style>
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            color: brown;
+            margin-top: 50px;
+        }
+
+        .card {
+            margin-left: 200px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .list-group-item {
+            font-weight: 700;
+            color:darkred;
+
+        }
+        /* .flag-icon {
+            color:red;
+            font-size: 50px;
+            cursor: pointer;
+        } */
+
+        .canada {
+            
+            width: 600px;
+            margin-left: 200px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .more {
+            margin-left: 10px;
+            background-color: darkred;
+            border-color: darkred;
+            font-weight: 700;
+            
+        }
+        .trip {
+            width: 800px;
+            border-radius: 50px;;
+            border-color: rgb(201, 86, 86);
+            font-weight: 600;
+            font-style: oblique;
+            margin-left: 900px;
+            margin-top :20px
+            
+        }
+        .card2 {
+            margin-left: 500px;
+            margin-top :-800px
+        }
+        .happy {
+            margin-top: -400px;
+        }
+
+        .box {
+            margin-left: 520px;
+           
+        }
+
+
+		
+	</style>
+</head>
+<body>
+    <h1>캐나다에 대해 알아보자</h1>
+	
+    <div class="card" style="width: 18rem;">
+        <img src="./image/flag.jpg" class="card-img-top" alt="국기">
+        <div class="card-body text-center">
+          <h5 class="card-title">캐나다의 역사</h5>
+          <p class="card-text" >캐나다는 본래 소수의 인디언이 살던 곳으로, 인디언 언어로 부락이란 뜻인 ‘카나다’가 어원이다. 1628년 캐나다에 노바스코샤 식민지가 설립되면서 영국인의 진출이 시작되었다.</p>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">국기의 역사</li>
+          <li class="list-group-item">다민종 국가</li>
+          <li class="list-group-item">다양한 기후</li>
+        </ul>
+        <div class="card-body text-bg-danger bg-opacity-10 text-center">
+          <a href="https://terms.naver.com/entry.naver?docId=530254&cid=46627&categoryId=46627" target="_balnk" class="card-link">역사 링크</a>
+          <a href="https://terms.naver.com/entry.naver?docId=1178215&cid=40942&categoryId=40560" target="_balnk" class="card-link">기후 링크</a>
+        </div>
+      </div>
+
+      <!-- <i class="flag-icon bi bi-flag"></i>
+      <script>const flag = document.querySelector('.flag icon');
+
+      flag.addEventListener('click', function() {
+         flag.classList.toggle('bi-flag');
+         flag.classList.toggle('bi-flag-fill');
+      })
+        </script> -->
+    <div class="box">
+    <button type="button" class="more btn btn-primary btn-lg">더 알아보기</button>
+    <button type="button" class="more btn btn-secondary btn-lg">뒤로가기</button>
+    </div>
+
+    <div class="canada bg-danger p-2 text-white">This is default danger background</div>
+    <div class="canada bg-danger p-2 text-white bg-opacity-75">1. 여름에 여행 가기 좋은 도시는 ?</div>
+    <div class="canada bg-danger p-2 text-dark bg-opacity-50">2. 캐나다의 대표 음식이란 ?</div>
+    <div class="canada bg-danger p-2 text-dark bg-opacity-25">3. 토론토와 밴쿠버의 지리, 기후적 차이는?</div>
+    <div class="canada bg-danger p-2 text-dark bg-opacity-10">4. 캐나다의 겨울 스포츠에 대해 알아보자</div>
+
+
+
+    <div class="card2" style="width: 20rem;">
+        <img src="./image/b.jpg" class="card-img-top rounded-circle" alt="캐나다">
+        <img src="./image/a.jpg" class="card-img-top rounded-circle" alt="캐나다">
+      </div>
+    <div class="happy">
+      <div class="trip alert alert-primary" role="alert">
+        Hello korean!!
+      </div>
+      <div class="trip alert alert-secondary" role="alert">
+        If you want to get more imformation please click here!
+      </div>
+      <div class="trip alert alert-success" role="alert">
+        Covid-19 situation for canada
+      </div>
+      <div class="trip alert alert-danger" role="alert">
+        Travel rule in canada
+      </div>
+      <div class="trip alert alert-warning" role="alert">
+        안녕 한국인들!!
+      </div>
+      <div class="trip alert alert-info" role="alert">
+        더 많은 정보를 원하면 이곳을 클릭하시오!
+      </div>
+      <div class="trip alert alert-light" role="alert">
+        코로나 바이러스에 대한 캐나다 상황!
+      </div>
+      <div class="trip alert alert-dark" role="alert">
+        캐나다 여행 규칙!
+      </div>
+    </div>
+       
+
+	
+	<!-- CDN Link (js) -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js
+	"></script>
+</body>
+</html>

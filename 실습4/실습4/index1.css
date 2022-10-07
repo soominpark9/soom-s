@@ -1,0 +1,52 @@
+
+.ball {
+    border-radius: 50%;
+    background: yellow;
+    width: 100px;
+    height :100px;
+    left:100px;
+  
+    position: relative;
+    animation-name:ball;
+    animation-duration:3s;
+    animation-iteration-count: 6;
+    animation-timing-function: linear;
+    
+}
+
+@keyframes ball {
+
+  from {
+    left : 0;
+    top : 0;
+  }
+
+  25% { left : 600px;
+        top : 0;
+        
+  }
+
+  50% { left : 600px;
+        top : 600px;
+        
+        
+
+  }
+
+  75% { top : 600px;
+        left : 0;
+
+  }
+
+  to{
+    left:0;
+    top :0;
+  }
+}
+
+/* 같은 지점은 같은 값으로 설정해주고 0이여도 다 작성해 주도록 하자 
+그리고 중간지점이 필요하다고 해서 이동하는 가로에 중간 지점을 또 세세하게 나눌 필요가 없고
+시작점 1,2,3, 끝 으로 돌아오는 네모 시계방향이니까 사실 123이 알아서 중간 지점이된다고 생각하면됨
+그리고 left로 작성했으면 모든 지점의 값에 left을 지정해줘야 한다 right로 지정하면 
+컴퓨터가 오류 먹고 안먹는다 
+ */

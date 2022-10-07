@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN link (css) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+  <!-- 다르게 더 추가하고싶으면 인라인 스타일 방식말고
+여기에 추가로 js파일을 연결시키거나
+아니head태그안에 따로 <style></style>을 만들어사용함됨
+cdn링크보다 js파일 링크 코드가 아래여야함 꼭 안엉키기위해서 -->
+<body>
+    <h1>Bootstrap component</h1>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-link">Link</button>
+    <hr>
+
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-outline-info">Info</button>
+    <button type="button" class="btn btn-outline-light">Light</button>
+    <button type="button" class="btn btn-outline-dark">Dark</button>
+    <br>
+
+    <!-- progress -->
+    <!-- width에 따라 진행바의 길이가 달라짐 -->
+    <br>
+    <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div><br>
+    <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div><br>
+    <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div><br>
+    <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div><br>
+    <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div><br>
+
+
+    <!-- carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./image/a.jpg" class="d-block w-100" alt="캐나다">
+          </div>
+          <div class="carousel-item">
+            <img src="./image/b.jpg" class="d-block w-100" alt="캐나다">
+          </div>
+          <div class="carousel-item">
+            <img src="./image/c.jpg" class="d-block w-100" alt="캐나다">
+          </div>
+          <div class="carousel-item">
+            <img src="./image/d.jpg" class="d-block w-100" alt="캐나다">
+          </div>
+          <div class="carousel-item">
+            <img src="./image/flag.jpg" class="d-block w-100" alt="캐나다">
+          </div>
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> -->
+
+
+        <!-- collapse -->
+
+        <p>
+            <!-- <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Link with href
+            </a> -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Button with data-bs-target
+            </button>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+            </div>
+          </div>
+
+          <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+              Toggle width collapse
+            </button>
+          </p>
+          <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+              <div class="card card-body" style="width: 300px;">
+                This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+              </div>
+            </div>
+          </div>
+
+          <!-- 참고! area -xx
+          :접근성, 스크린 리더  -->
+           <!-- accordion-->
+           <!-- 여기선 data-bs-parent="#accordionExample 이 내용이 모든 섹션ㅇ ㅔ 동일한이름으로 들어가야한다 -->
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  ㅎㅎㅎAccordion Item #1 >>수정가능
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>여기도 내용수정 가능This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Accordion Item #2 >>  수정가능
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <br>
+
+    <!-- badge 
+    btn-primary -> btn-warning로 바꿈
+    bg-danger -> bg-primary로 바꿈
+    rounded-pill -> 둥글게만듬 지우면 둥근 느낌이 사라진다 -->
+    <button type="button" class="btn btn-warning position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+          99+
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+    
+
+   
+    <span class="badge rounded-pill text-bg-primary rounded-pill">Primary</span>
+    <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+    <span class="badge rounded-pill text-bg-success">Success</span>
+    <span class="badge rounded-pill text-bg-danger">Danger</span>
+    <span class="badge rounded-pill text-bg-warning">Warning</span>
+    <span class="badge rounded-pill text-bg-info">Info</span>
+    <span class="badge rounded-pill text-bg-light">Light</span>
+    <span class="badge rounded-pill text-bg-dark">Dark</span>
+
+    <!-- card -->
+    <div class="card" style="width: 18rem;">
+        <img src="./image/flag.jpg" class="card-img-top" alt="캐나다">
+        <div class="card-body">
+          <h5 class="card-title">캐나다국기</h5>
+          <p class="card-text">캐나다로 다시 돌아가고 싶다..</p>
+          <a href="http://www.naver.com" target="_balnk" class="btn btn-success">캐나다 관련 검색하기</a>
+        </div>
+      </div>
+
+      <!-- drop down 밑으로 열리는 버튼 -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          이동하기
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="http://www.google.com">구글</a></li>
+          <li><a class="dropdown-item" href="http://www.naver.com">네이버</a></li>
+          <li><a class="dropdown-item" href="http://www.daum.net">다음</a></li>
+        </ul>
+      </div>
+
+      <!-- offcanvus 
+    href =""내용은 모두 동일
+    btn-lg 큰 버튼
+    btn-sm 작은 버튼-->
+
+      <a class="btn btn-info btn-sm" data-bs-toggle="offcanvas" href="#my-slide" role="button" aria-controls="my-slide">
+        Link with href 수정가능
+      </a>
+      <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#my-slide" aria-controls="my-slide">
+        Button with data-bs-target
+      </button> -->
+      
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="my-slide" aria-labelledby="my-slideLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="my-slideLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+          </div>
+          <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- navevar -->
+      <nav class="navbar navbar-expand-lg bg-warning">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">로고</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Dropdown
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Action</a></li>
+							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled">Disabled</a>
+					</li>
+				</ul>
+				<form class="d-flex" role="search">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+
+    <!-- CDN link (js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

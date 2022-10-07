@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 사용해보기</title>
+    <!-- JS 사용 방식
+       1. html 파일에서 script 태그 내부에 작성
+       1-1 head 태그 내부에 작성
+       1-2 body 태그 내부에 작성
+       2. .js 파일 생성해서 연결하여 사용
+      2-1(head 태그 -> script 태그 src 속성에 js 파일 경로)
+        2-2 (body 태그 -> script 태그 src 속성에 js 파일 경로) -->
+
+
+        <!-- 1-1과 2-1은 비슷한 부분들이 있다  
+        * 웹페이지 불러오기 전에 실행 
+        * 자바스크립트 길이가 너무 길다면 ? 컴퓨터가 자바스크립트를 읽는다고 사용자가 흰화면을 볼 수있다 (마치 오류 처럼 보인다 )--> 
+  <!-- <script>
+
+    console.log('HI');
+
+  </script> -->
+  <!-- <script src="./index.js"></script> -->
+</head>
+<body>
+    <h1>Javascript를 배워보자!</h1>
+    <!-- <script>console.log('HI BODY'</script> -->
+    <script src="./index.js"></script>
+
+    <!-- 1-2 & 2-2 ('ht body')
+    보통 닫는 body태그 위에 작성이 되기 때문에 
+    웹페이지를 불러 온 후 실행 된다 (why? html파일을 위에서부터 한 줄씩 읽기 때문)
+    그럼 무조건 좋은가 ? 그건 또 아니다 왜냐면 html을 다 그렸는데 자바가 너무 길어서
+    내용을 다 불러오기전에 사용자가 다른 동작을 누르면 스크립트를 불러오지 않는다는 단점이 있다 ( 실행이 되지 않으니 오류가 난 것 처럼 보인다
+    선생님은 2-2 방식으로 계속 사용하신다고 하심 )-->
+
+    
+</body>
+</html>

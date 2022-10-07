@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 참조방식 우선 순위</title>
+
+    <link rel="stylesheet" href="./index02.css">
+ <!-- style 과 link가 서로 위아래 어디있느냐에 따라서 우선순위가 달라진다 -->
+    <style>
+
+        span {
+            color : green;
+        }
+    </style>
+</head>
+<body>
+    <h1>css 우선순위에 대해 알아보자!</h1>
+
+    <!-- 아래가 우선순위가 가장 높다 인라인 방식 -->
+    <p>어두운 <span style = " color : gold;">불빛아래</span> <span>촛불 하나</span>
+        <span>와인</span> 잔에 담긴 <span>약속하나</span>
+        항상 <span>너의</span> 곁에서 널 <span>지켜줄거야</span>
+        <span>날</span> <span>믿어준</span> 너였잖아</p>
+</body>
+</html>

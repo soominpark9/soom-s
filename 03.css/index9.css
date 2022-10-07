@@ -1,0 +1,58 @@
+.beach1 {
+    width:400px;
+    height : 200px;
+    background-color: gold;
+
+    position: absolute;
+    top : 200px;
+    left:150px;
+}
+
+
+
+img {
+    width: 100%;
+    height : 100%;
+}
+
+img:hover {
+    /* transition: 
+        css 프로퍼티(속성)이 변화할 때
+        일정시간동안 변화가 일어나도록
+    */
+    transition: trasform 1s;
+
+
+    /* transform */
+    /* skew( 원하는 각도만큼 요소를 기울임)
+    x,y축 나눠서 각도를 줄수도 있고 동시에 줄 수도 있음 */
+ 
+    /*transform: skewX(30deg); */
+    /* transform: skew(30deg, 30deg); */
+
+    /* scale() : 크기 조절 (확대,축소를 의미) 
+        - x >1 : 확대
+        - 0 ~1 : 축소 */
+
+     /* transform : scaleX(2); */
+     /* transform : scaleY(2) */
+     /* 아래는 x는 두배 y는 축소한 값의 형태 */
+     /* transform :scale(2, 0.5); */
+
+
+     /* rotate() : 각도만큼 회전
+        -rotateX() : x축을 기준 회전
+        -rotatey() : y축을 기준 회전*/
+     /* transform: rotate(45deg); */
+
+     /* translate() 이동
+         - translateX() :x 축을 기준으로 이동
+         - translateY() :y 축을 기준으로 이동
+         - translate(): x,y 축을 기준으로 이동
+    */
+
+    /* transform: translateX(-100px); */
+    /* transform: translateY(100px); */
+    /* transform: translate(100px, 100px); */
+    /* transform: translate(-100px, -100px); */
+}

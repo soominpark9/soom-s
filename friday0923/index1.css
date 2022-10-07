@@ -1,0 +1,56 @@
+/* .d-inline,
+.d-inline { 
+    background-color: pink;
+} */
+
+/*  같은 거를 적용할떄는 위와같이 콤마로 연결 가능 
+한번에 수정할때 좋고 코드 보기가 좀 더 깔끔 */
+
+
+body {
+    padding-bottom:500px;
+}
+
+.d-inline1 {
+    display : inline;
+    background-color: red;
+}
+
+.d-inline2 {
+    display : inline;
+    background-color: blue;
+}
+
+.d-block1 {
+    display : block;
+    background-color: red;
+    width : 1200px;
+    height : 200px;
+    padding: 10px 30px;
+}
+
+.d-block2 {
+    display: block;
+    background-color: blue;
+}
+
+.d-inline-block1 {
+    display: inline-block;
+    background-color: red;
+}
+
+.d-inline-block2 {
+    display: inline-block;
+    background-color: blue;
+    width : 200px;
+    height : 200px;
+    margin : 10px;
+}
+
+.d-none{
+    display: none;
+    width:100px;
+    height:100px;
+    background-color: green;
+}
+
