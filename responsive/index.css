@@ -1,0 +1,78 @@
+html {
+    font-size: 16px;
+  
+    margin-bottom: 1000px;
+  }
+  
+  .box {
+    margin-bottom: 100px;
+  }
+  
+  .px {
+    width: 500px;
+    height: 500px;
+    background-color: palegoldenrod;
+  }
+  
+  .pct-parent {
+    width: 500px;
+    height: 500px;
+    background-color: plum;
+  }
+  
+  .pct-child {
+    width: 50%;
+    height: 50%;
+    background-color: palegreen;
+  }
+  
+  .em {
+    font-size: 2em;
+  }
+  
+  .rem {
+    font-size: 2rem;
+  }
+
+
+.vw {
+    width :20vw;
+    height :20vw;
+    background-color: coral;
+}
+
+.vw-font {
+    font-size: 20vw;
+}
+
+.vh {
+    width :20vh;
+    height: 20vh;
+    background-color: skyblue;
+}
+
+/* body {
+    height : 100vh;
+    
+    -->쓸일이 많지는 않음
+    많은 내용을 담지 않았을때 스크롤 없이 만들고 싶을떄 
+    뷰포트 크기롤 100 으로하면된다*/
+/* root는 보통 맨 위에올려쓴다 그래야 다른사람이 봐도 아 여기 속성 추가 시킬게있으니
+필요하면 가져다가 써야지 할 수 있기 때문이다.  */
+    :root {
+        --color-primary: #845e2c;
+        --height-header: 100px;
+    }
+
+    .my-div {
+        background-color:  var(--color-primary);
+        width:200px;
+        height: var(--height-header);
+    }
+
+
+
+
+
+
+    

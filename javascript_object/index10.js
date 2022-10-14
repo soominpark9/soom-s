@@ -22,7 +22,7 @@ function removeNode() {
 
     
     div.removeChild(p);  //자식을 지우는 거니까 자식요소p가와야한다
-    p.remove();
+    // p.remove();
 }
 
 //노드 생성/추가/삭제

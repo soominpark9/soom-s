@@ -13,3 +13,8 @@ console.log(`판매자 : ${num.seller}`)
 console.log(`색상 : ${num.color}`);
 console.log(`주문량 : ${num.isStock}`)
 console.log(Math.floor(Math.random()*99)+1);
+
+
+
+
+// 

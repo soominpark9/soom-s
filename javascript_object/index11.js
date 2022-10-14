@@ -1,7 +1,5 @@
 console.log('!');
 
-const todoform = document.querySelector('#todo-form');
-const ul = document.querySelector('.todos');
 
 //이벤트 객체
 //event
@@ -11,7 +9,12 @@ const clickme = document.querySelector('#clickme');
 clickme.addEventListener('click', function (event) {
     console.log(event);
     //여기서event는 : 이벤트 객체에 대한 정보를 담고 있다.
-})
+});
+
+
+
+const todoform = document.querySelector('#todo-form');
+const ul = document.querySelector('.todos');
 todoform.addEventListener('submit', function(event) {
     
     //폼 이벤트: 폼이 제출되면 새로고침이 되는게 기본동작인데 
@@ -27,9 +30,9 @@ todoform.addEventListener('submit', function(event) {
 
     
 	const todoInput = document.querySelector('input[name="todo"]'); //선택한 요소
-	console.log(todoInput); //값을 확인 할 수 있다
-	console.dir(todoInput); //객체를 트리 구조로 보여주는 명령어
-    console.log(todoInput.value); //input값을 활용할 수 있음을 의미하는 코드 
+	// console.log(todoInput); //값을 확인 할 수 있다
+	// console.dir(todoInput); //객체를 트리 구조로 보여주는 명령어
+    // console.log(todoInput.value); //input값을 활용할 수 있음을 의미하는 코드 
     let todo = todoInput.value; //사용자가 input에 입력한 값이 된다
 
 

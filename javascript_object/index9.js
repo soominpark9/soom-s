@@ -66,19 +66,19 @@ beach.setAttribute('width','300');
 
 let h1 = document.querySelector('h1');
 
-//3-1 인라인 스타일 방법으로 제어 할 수 있는 첫번째 방법 -->요소.style.color이런식으로
-//사용하면 인라인 요소로 들어가는 것을console창에서 확인가능
-// console.log(h1);
-// console.log(h1.style);
-// console.log(h1.style.fontSize); //camel case로 작성
+// 3-1 인라인 스타일 방법으로 제어 할 수 있는 첫번째 방법 -->요소.style.color이런식으로
+// 사용하면 인라인 요소로 들어가는 것을console창에서 확인가능
+console.log(h1);
+console.log(h1.style);
+console.log(h1.style.fontSize); //camel case로 작성
 
-// h1.style.color = 'limegreen';
-// h1.style.backgroundColor='skyblue';
-// h1.style.border = '4px solid brown';
-// h1.style.textShadow = '2px 2px 10px #f005'
+h1.style.color = 'limegreen';
+h1.style.backgroundColor='skyblue';
+h1.style.border = '4px solid brown';
+h1.style.textShadow = '2px 2px 10px #f005'
 
-let lis = document.querySelectorAll('li'); //배열로 가지고 올때 배열 변수 이름에s를 붙여주신다고 한다
-// console.log(lis);
+// let lis = document.querySelectorAll('li'); //배열로 가지고 올때 배열 변수 이름에s를 붙여주신다고 한다
+// // console.log(lis);
 
 // for(let i =0; i<lis.length; i++) {   //밑에꺼랑 차이점은 숫자같은 거를 조작할수있느데 즉 뽑아서 넣을 수 있는데 밑에 for of 반복문은 배열에서만 사용한다는 근데 쌤이 익숙해지면 밑에께 더 쉬울수 도 있따함
 //     console.log(lis[i]);
@@ -86,27 +86,39 @@ let lis = document.querySelectorAll('li'); //배열로 가지고 올때 배열 �
 //     lis[i].style.fontSize ='20px';
 //     lis[i].style.backgroundColor = '#ddd';
 // }
+let lis =document.querySelectorAll('li')
+for(let i=0; i<lis.length; i++){
+    console.log(lis[i]);
+    lis[i].fontSize='20px';
+    lis[i].style.color='red';
+}
 
 // for ... of 반복문
 // for (let 반복변수 of 배열) {} //길이를 지정 하지 않아도 알아서 순서대로 출력해준다
-// const mylists = ['a','b','c','d'];
-// for (let list of mylists) {
-//     console.log(list);
-// }
-// //인라인 방법
-// for (let li of lis) {  //lis태그를 모두 가져옴
-//     console.log(li);
-//     li.style.color = 'rgb(0,100,200)';
-//     li.style.fontSize ='30px';
-//     li.style.backgroundColor = '#ddd';
-//     li.style.padding= '20px';
-//     li.style.margin='30px';
-//     li.style.fontWeight='bold';
-//     li.style.fontStyle='italic';
-//     li.style.textShadow='2px 2px 5px black';
-//     li.style.borderRadius='50px 50px';
+const mylists = ['a','b','c','d'];
+for (let list of mylists) {
+    console.log(list);
+}
 
-// }
+const mylists1 =['e','f','g','h','u'];
+for (let list2 of mylists1) {
+    console.log(list2)
+
+}
+// //인라인 방법
+for (let li of lis) {  //lis태그를 모두 가져옴
+    console.log(li);
+    li.style.color = 'rgb(0,100,200)';
+    li.style.fontSize ='30px';
+    li.style.backgroundColor = '#ddd';
+    li.style.padding= '20px';
+    li.style.margin='30px';
+    li.style.fontWeight='bold';
+    li.style.fontStyle='italic';
+    li.style.textShadow='2px 2px 5px black';
+    li.style.borderRadius='50px 50px';
+
+}
 
 
 //3-2. 클래스 제어 방식 ( 좀 더 많이 사용하는 방식 )
