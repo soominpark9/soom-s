@@ -37,8 +37,10 @@ function pay() {
 
 async function exec() {
   goMart();
-  pickDrink(); //3초 시간이 걸리는 작업
+  await pickDrink(); //3초 시간이 걸리는 작업
   pay();
 }
 
+let pruduce;
+let price;
 exec();

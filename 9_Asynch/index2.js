@@ -79,7 +79,8 @@
 let prodoct;
 let price;
 goMart();
-pickDrink().then(pay);
+pickDrink()
+.then(pay);
 
 // #3 Promis 체이닝
 // ex. 함수를 이용해 (4 +3) *2 -1 = 13연산을 해보자!
