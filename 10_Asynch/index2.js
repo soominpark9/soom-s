@@ -76,10 +76,10 @@
 //   console.log(`${product} 제품의 가격은 ${price}이다.`);
 // }
 
-// let prodoct;
-// let price;
-// goMart();
-// pickDrink().then(pay);
+let prodoct;
+let price;
+goMart();
+pickDrink().then(pay);
 
 // #3 Promis 체이닝
 // ex. 함수를 이용해 (4 +3) *2 -1 = 13연산을 해보자!
@@ -123,7 +123,7 @@ function add(n1, n2) {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
       let result = n1 + n2;
-      callback(result);
+      resolve(result);
     }, 1000);
   });
 }
@@ -132,7 +132,7 @@ function mul(n) {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
       let result = n * 2;
-      callback(result);
+      resolve(result);
     }, 700);
   });
 }
