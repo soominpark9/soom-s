@@ -57,30 +57,29 @@
 // index.js 에서 "콜백함수"를 이용해 동기처리 한 것을
 // "promise"를 이용해 동기처리를 해보자!!
 
-// function goMart() {
-//   console.log("마트에 가서 어떤 음료를 살지 고민한다.");
-// }
+function goMart() {
+  console.log("마트에 가서 어떤 음료를 살지 고민한다.");
+}
 
-// function pickDrink() {
-//   return new Promise(function (resolve, reject) {
-//     setTimeout(function () {
-//       console.log("고민 끝!");
-//       product = "제로 콜라";
-//       price = 2000;
-//       resolve();
-//     });
-//   });
-// }
+function pickDrink() {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log("고민 끝!");
+      product = "제로 콜라";
+      price = 2000;
+      resolve();
+    });
+  });
+}
 
-// function pay() {
-//   console.log(`${product} 제품의 가격은 ${price}이다.`);
-// }
+function pay() {
+  console.log(`${product} 제품의 가격은 ${price}이다.`);
+}
 
-let prodoct;
+let product;
 let price;
 goMart();
-pickDrink()
-.then(pay);
+pickDrink().then(pay);
 
 // #3 Promis 체이닝
 // ex. 함수를 이용해 (4 +3) *2 -1 = 13연산을 해보자!

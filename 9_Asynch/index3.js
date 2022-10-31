@@ -41,6 +41,4 @@ async function exec() {
   pay();
 }
 
-let pruduce;
-let price;
 exec();
