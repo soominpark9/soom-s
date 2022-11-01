@@ -25,11 +25,13 @@ app.get("/getForm", function (req, res) {
   res.render("result", { title: "GET 요청 성공", userInfo: req.query });
 });
 
+
+
 app.post("/postForm", function (req, res) {
   //POST요청은 req.body 객체에 폼 정보가 전달
   console.log(req.body);
   //   res.send("post 요청 응답 성공");
-  res.render("result", { title: "POST 요청 성공", userInfo: req.body });
+  res.render("result", { title: "POST 요청 성공", userInfo: req.body }); //userInfo(객체)안에 req,body 또 객체를 넣기 즉 객체안에 객체 넣기
 });
 
 app.listen(PORT, function () {

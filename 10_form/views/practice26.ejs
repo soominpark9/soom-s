@@ -7,37 +7,51 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="">
-      <input type="text" name="id" id="name2" method="get" />
+    <form action="/result26" method="get">
+      <!-- result26으로 result결과를 받겠다 라는 뜻 -->
+      <input type="text" name="id" id="name2" />
       <label for="name2">이름</label>
       <br />
 
       <fieldset>
         <legend>성별</legend>
-        <input type="radio" name="gender" method="get" id="male" />
+        <input type="radio" name="gender" id="male" value="male" />
         <label for="male">남성</label>
-        <input type="radio" name="gender" method="get" id="female" />
+        <input type="radio" name="gender" id="female" value="female" />
         <label for="female">여성</label>
       </fieldset>
 
       <br />
       <fieldset>
         <legend>생년월일</legend>
-        <input type="select" name="birth" method="get" id="trip"/>
-        <label for="trip">여행</label>
-       
+        <select name="birthyear" id="year" />
+        <% for(let i=0; i< 50; i++)%> { %>
+        <option value="<%= 2010 - i %>"><%= 2010 -i%></option>
+        <% }%>
+        </select> 
+
+        <select  name="birthmonth" id="month" />
+        </select> 
+        <select  name="birthday" id="day" />
+        </select> 
+
       </fieldset>
 
       <fieldset>
         <legend>관심사</legend>
-        <input type="checkbox" name="birth" method="get" id="trip"/>
+        <input type="checkbox" name="birth" id="trip" value="trip" />
         <label for="trip">여행</label>
-        <input type="checkbox" name="birth" method="get" id="fashion"/>
+        <input type="checkbox" name="birth" id="fashion" value="fashion" />
         <label for="trip">패션</label>
-        <input type="checkbox" name="birth" method="get" id="music"/>
+        <input type="checkbox" name="birth" id="music" value="music" />
         <label for="trip">음악2</label>
       </fieldset>
-
+<!-- 체크박스와 라디오에서는 value값이 필수 그래야 컴퓨터가 무엇을 선택한지 안다 -->
+      <button type="submit">회원가입</button>
     </form>
+
+    <br />
+    <br />
+    <a href="/">홈으로 이동</a>
   </body>
 </html>
