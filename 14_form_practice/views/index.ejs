@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+
+    <style>
+      body {
+        background-color: palegoldenrod;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+      <input type="text" name="userId" placeholder="아이디" />
+      <br />
+      <input type="password" name="userPw" placeholder="비밀번호" pattern="^([a-zA-Z0-9]){6,}$" required />
+      <br />
+      <input type="text" name="name" placeholder="이름" pattern="^([a-zA-Z가-힣]){1,}$" required/>
+      <br />
+      <input type="number" name="age" placeholder="나이" />
+      <br />
+      <input type="file" name="userfile" >
+      <br>
+      <button type="sumbit">회원가입</button>
+      <!-- 일반 폼을 전송 하고 있으니 타입은 submit으로 작성해 준다  -->
+    </form>
+    
+   
+  </body>
+</html>

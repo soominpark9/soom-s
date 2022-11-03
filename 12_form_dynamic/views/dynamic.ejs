@@ -31,15 +31,15 @@
       <input type="radio" name="gender" id="female" value="f" />
       <label for="female">여성</label>
 
-      <br />
+      <!-- <br />
       <button type="button" onclick="ajaxGet();">ajax get 제출</button>
-      <button type="button" onclick="ajaxPost();">ajax post 제출</button>
+      <button type="button" onclick="ajaxPost();">ajax post 제출</button> -->
       <br />
       <button type="button" onclick="axiosGet();">axiosGet 제출</button>
       <button type="button" onclick="axiosPost();">axiosPost 제출</button>
       <br />
-      <button type="button" onclick="fetchGet();">fetchGet 제출</button>
-      <button type="button" onclick="fetchPost();">fetchPost 제출</button>
+      <!-- <button type="button" onclick="fetchGet();">fetchGet 제출</button>
+      <button type="button" onclick="fetchPost();">fetchPost 제출</button> -->
     </form>
 
     <div class="result"></div>
@@ -112,31 +112,49 @@
       }
 
       function axiosGet() {
-        console.log("####### click axiosget #######");
+        console.log("####### click axiosGet #######");
 
         const form = document.forms["register"];
+        console.log(form);
+        console.log(form.name); // input name
+        console.log(form.gender); // input gender
+
+        console.log("여기여기", form.name.checkValidity()); // input name
+        console.log("여기여기", form.gender[0].checkValidity()); // input gender
+        // console.log('여기여기', form.gender[1].checkValidity()); // input gender
+
         const data = {
           name: form.name.value,
           gender: form.gender.value,
         };
-        //AXIOS 비동기 통신 -GET 요청 /axios 서버주소로 get요청 함
-        axios({
-          method: "GET",
-          url: "/axios", //get 요청을 axios 서버로 했다
-          params: data, //주의할점 : get 요청은 "params" 에 정보를 실어서 보내야 됨
-        }).then(function (response) {
-          //axios는 promise를 반환하기 때문에 쓴다!
-          console.log(response); //서버의 응답 결과
-          console.log(response.data); //res.send(req.query)가 들어있다
-          console.log(response.data.name);
-          console.log(response.data.gender);
 
-          resultBox.textContent = `GET /axios 요청 완료 ${response.data.name}님은 ${response.data.gender}이시죠?`;
-          resultBox.style.color = "green";
-        });
+        // AXIOS 비동기 통신 - GET /axios 요청
+        // 사용자의 입력이 올바르지 않다면, axios 요청 시도 x
+        // 사용자의 입력이 올바르다면, axios 요청 시도
+
+        if (
+          form.name.checkValidity() === true &&
+          form.gender[0].checkValidity()
+        ) {
+          axios({
+            method: "GET",
+            url: "/axios",
+            params: data, // GET 요청은 "params"에 정보를 실어서 보내야 됨
+          }).then(function (response) {
+            // axios는 promise를 반환한다!! -> then 메서드 사용
+            console.log(response); // 서버의 응답결과
+            console.log(response.data); // res.send(req.query)
+            console.log(response.data.name);
+            console.log(response.data.gender);
+
+            resultBox.textContent = `GET /axios 요청 완료!! ${response.data.name}님은 ${response.data.gender}이시죠?ㅎㅎ`;
+            resultBox.style.color = "green";
+          });
+        } else {
+          resultBox.textContent = "입력값을 올바르게 채워주세요";
+          resultBox.style.color = "red";
+        }
       }
-
-
 
       function axiosPost() {
         console.log("####### click axiospost #######");

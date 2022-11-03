@@ -1,7 +1,7 @@
 const e = require("express");
 const express = require("express");
 const app = express();
-const PORT = 8002;
+const PORT = 8005;
 
 app.set("view engine", "ejs");
 app.use("/views", express.static(__dirname + "/views"));
@@ -25,11 +25,6 @@ app.post("/axious", function (req, res) {
   console.log(req.body);
   res.send(req.body);
 });
-
-app.listen(PORT, function () {
-  console.log(`http://localhost:${PORT}`);
-});
-
 
 // 1. ajax
 // GET /ajax
