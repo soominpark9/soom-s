@@ -41,18 +41,18 @@ app.post("/ajax", function (req, res) {
   res.send(req.body);
 });
 
-//2. axios
-// GET /axios
-app.get("/axios", function (req, res) {
-  console.log(req.query); //터미널에 보여줌
-  res.send(req.query); //띄워준다
-});
+// //2. axios
+// // GET /axios
+// app.get("/axios", function (req, res) {
+//   console.log(req.query); //터미널에 보여줌
+//   res.send(req.query); //띄워준다
+// });
 
-// POST /axious
-app.post("/axious", function (req, res) {
-  console.log(req.body);
-  res.send(req.body);
-});
+// // POST /axious
+// app.post("/axious", function (req, res) {
+//   console.log(req.body);
+//   res.send(req.body);
+// });
 
 // 3. fetch에 대한 주소
 // GET /fetch
