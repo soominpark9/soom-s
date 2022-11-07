@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>댓글 목록 보기</title>
+  </head>
+  <body>
+    <h1>댓글 모음</h1>
+    <a href="/">홈으로 이동하기</a>
+
+    <!-- 전체 댓글 목록(4개) 보이기 
+    지금은 li 태그에 감쌌지만 ul태그 밖에 감싸면 ul태그가 반복된다 어디든 쓸 수 있다.-->
+    <ul>
+        <% for (let i = 0; i < commentsInfos.length; i++) { %>
+      <li><%= commentsInfos[i].userid %> - <a href="/comment/<%= i+1 %>"><%= commentsInfos[i].comment %></a>
+    <!-- 배열의 0번째 요소 = commentInfos 요소의 id 1 -->
+    </li>
+      <% } %>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+      <li><%= commentsInfos[1].userid %> - <%= commentsInfos[1].comment %></li>
+      <li><%= commentsInfos[2].userid %> - <%= commentsInfos[2].comment %></li>
+      <li><%= commentsInfos[3].userid %> - <%= commentsInfos[3].comment %></li> -->
+      <!-- hollodworld - 안녕하세요 이런식으로 찍힘  -->
+
+    </ul>
+  </body>
+</html>

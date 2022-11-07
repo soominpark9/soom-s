@@ -106,6 +106,8 @@ INSERT INTO user (name, age, address) VALUES ('박찬희', 40, '강원도 속초
 INSERT INTO user (name, age, address) VALUES ('권희수', 36, '서울특별시 영등포구');
 
 
+
+
 --################################################################
 
 --[READ - SELECT]
@@ -148,7 +150,7 @@ SELECT * FROM user WHERE name LIKE '__희' ORDER BY age DESC;
 
 --LIMIT : 데이터 개수 제한
 SELECT * FROM user LIMIT 3;
-SELECT * FROM user WHERE address LIMIT '서울%' LIMIT 2; -- 주소가 서울인 사람들 중에 2명만 보여주세요 라는 뜻
+SELECT * FROM user WHERE address LIKE'서울%' LIMIT 2; -- 주소가 서울인 사람들 중에 2명만 보여주세요 라는 뜻
 
 --BETWEEN a AND b : 사이값 조회
 SELECT * FROM user WHERE age BETWEEN 25 AND 30; --나이가 25부터30살 사이인 사람들을 조회하겠습니다
@@ -195,5 +197,60 @@ UPDATE user SET address='제주 특별자치도 제주시', name='이지현' WHE
 
 DELETE FROM user WHERE id =11;
 DELETE FROM user WHERE id >8;
+
+
+--################################################################
+
+
+CREATE TABLE practice (
+  id VARCHAR(10) NOT NULL PRIMARY KEY,
+  pw VARCHAR(20) NOT NULL,
+  name VARCHAR(5) NOT NULL,
+  gender ENUM('F', 'M', '') default'',
+  birthday DATE NOT NULL,
+  age int(3) NOT NULL default'0'
+);
+
+
+
+INSERT INTO practice (id, pw, name, gender, birthday, age) VALUES ('hong1234', '8o4bkg', '홍길동', 'm', 1990-01-31, 33);
+INSERT INTO practice (id, pw, name, gender, birthday, age) VALUES ('sexysung', '87awjkdf', '성춘향', 'f', '1992-03-31', 31);
+INSERT INTO practice (id, pw, name, gender, birthday, age) VALUES ('power70', 'qxur8sda', '변사또', 'm', '1970-05-02', 53);
+INSERT INTO practice (id, pw, name, gender, birthday, age) VALUES ('hanjo', 'jk48fn4', '한조', 'm', '1984-10-18', 39);
+INSERT INTO practice (id, pw, name, gender, birthday, age) VALUES ('widowmaker', '38ewifh3', '위도우', 'f', '1976-06-27', 47);
+INSERT INTO practice (id, pw, name, gender, birthday, age) VALUES ('dvadva', 'k3fah', '송하나', 'f', '2001-06-03', 22);
+INSERT INTO practice (id, pw, name, gender, birthday, age) VALUES ('jungkrat', '4ifha7f', '정크랫', 'm', '1999-11-11', 24);
+
+
+SELECT * FROM practice;
+
+
+
+SELECT * FROM practice ORDER BY birthday ASC;
+SELECT * FROM practice WHERE gender='m' ORDER BY name DESC;
+SELECT id, name FROM practice WHERE birthday LIKE '1990%';
+SELECT * FROM practice WHERE birthday LIKE '%-06-%' ORDER BY birthday ASC;
+SELECT * FROM practice WHERE birthday LIKE '1970-%-%' AND gender='m';
+SELECT * FROM practice ORDER BY age DESC LIMIT 3;
+SELECT * FROM practice WHERE age<51 AND age>24;
+UPDATE practice set pw='12345678' WHERE id ='hong1234';
+DELETE FROM practice WHERE id = 'jungkrat';
+
+
+
+--######################################################################################
+
+--DCL
+--Data Control Language : 데이터 제어어
+--데이터베이스에 접근해 읽거나 쓰는 것을 제한할 수 있는 권한 부여/박탈
+--root말고 다른 사용자들도 있을텐데 그 다른 사용자들이 데이터베이스를 건드리지 못하도록 하는 것을 DCL이라고 한다.
+
+--GRANT : 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 "권한 부여"
+--REMOVE : 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 "권한 박탈"
+
+mysql -y root -p 
+
+
+
 
 
