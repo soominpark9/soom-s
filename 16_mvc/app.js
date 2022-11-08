@@ -18,7 +18,6 @@ app.use("/", indexRouter); //app.use는 무슨 뜻이냐? localhost:PORT/ -> 이
 // ./routes/user.js
 const userRouter = require('./routes/user');
 //locathost:PORT/user 경로글 기본으로 ./routes/user.js파일에 선언한 대로 동작
-
 app.use("/user", userRouter);
 
 app.get("*", (req, res) => {

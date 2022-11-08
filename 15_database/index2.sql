@@ -2,7 +2,7 @@
 -- # database 심화
 show databases;
 
-use ket;
+use kdt;
 
 show tables;
 
@@ -43,6 +43,7 @@ CREATE TABLE orderlist (
   quantity INT,
   FOREIGN KEY(customer_id) REFERENCES customer(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
 
 
 INSERT INTO orderlist (customer_id, product_name, quantity) VALUES ('aaa', '맥북m1', 1);

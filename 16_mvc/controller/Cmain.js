@@ -33,3 +33,6 @@ exports.comment = (req, res) => {
 
   res.render("comment", { commentInfo: comments[commentId - 1] });
 };
+
+
+
