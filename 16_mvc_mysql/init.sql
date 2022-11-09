@@ -29,13 +29,18 @@ DESC visitors
 -- DML
 
 -- 테이블 전체 테이터를 조회( read 역할 )
-SELECT * FROM visitors;
+SELECT * FROM visitors; -- all
+SELECT * FROM visitor WHERE id=1; -- one
 
 -- 테이블 데이터 추가( create 역할 )
 INSERT INTO visitors (name,comment) VALUES ('홍길동', '내가 왔다');
 INSERT INTO visitors (name,comment) VALUES ('이찬혁', '으라차차');
 
+-- 테이블 데이터 삭제 (delete)
+DELETE FROM visitors WHERE id>2;
 
+-- 테이블 데이터 수정 (update)
+UPDATE visitors SET name-'누구', comment='아무일' WHERE id=1;
 
 -- DCL
 -- mysql 사용자 추가 (user계정)

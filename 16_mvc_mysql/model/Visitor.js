@@ -37,6 +37,17 @@ exports.getVisitors = (callback) => {
 //   );
 // };
 
+exports.getVisitor = (id, callback) => {
+  conn.query(`SELECT * FROM visitors WHERE id=${id}`, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log("Visitor.js", rows); //[ {} ]
+    callback(rows[0]); //0으로 콜백에 넘겨준다..?
+  });
+};
+
 exports.postVisitor = (data, callback) => {
   // data: 사용자가 폼에 입력한 정보
   // { name: '빅파이', comment: '맛있다' }
@@ -48,44 +59,38 @@ exports.postVisitor = (data, callback) => {
         throw err;
       }
 
-      console.log('Visitor.js', rows);
+      console.log("Visitor.js", rows);
       callback(rows.insertId); // pk (id)
+    }
+  );
+};
+
+exports.patchVisitor = (data, callback) => {
+  conn.query(
+    `UPDATE visitors SET name='${data.name}', comment='${data.comment}' WHERE id=${data.id}`,
+    (err, rows) => {
+      if (err) {
+        throw err;
+      }
+
+      console.log("Visitor.js", rows);
+      callback(true); // true: 수정 성공을 의미
     }
   );
 };
 
 exports.deleteVisitor = (id, callback) => {
   // id: 사용자가 삭제버튼을 클릭한 그 행의 id 값
-  console.log('id: ', id);
+  console.log("id: ", id);
   conn.query(`DELETE FROM visitors WHERE id=${id}`, (err, rows) => {
     if (err) {
       throw err;
     }
 
-    console.log('Visitor.js: ', rows);
+    console.log("Visitor.js: ", rows);
     callback(true); // true : 삭제 성공을 의미
   });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // exports.getVisitors = () => {
 //   return [
