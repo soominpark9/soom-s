@@ -1,0 +1,49 @@
+.chatbox {
+  height: 600px;
+  width: 420px;
+  background-color: #b8e6f8;
+  border-radius: 3%;
+  padding: 1px;
+}
+
+.my-chat {
+  background-color: rgb(248, 217, 116);
+  width: 70px;
+  height: 30px;
+  margin-left: 340px;
+  margin-top: 10px;
+  border-radius: 10px 0 10px 10px;
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+}
+
+.other-chat {
+  background-color: white;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-left: 5px;
+  border-radius: 0 10px 10px 10px;
+}
+
+#textmsg {
+  margin-top: 503px;
+  margin-left: 5px;
+  /* border-radius: 5px;
+  border-color: grey; */
+}
+
+.btn {
+  background-color: bisque;
+  border-radius: 20%;
+  border: 0;
+  outline: 0;
+}
+
+.btn:hover {
+    background-color: violet;
+}
