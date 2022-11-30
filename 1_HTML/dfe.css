@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* / */
+  .box {
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+  }
+  
+  .btns {
+    height: 25%;
+    background-color: rgb(226, 226, 226);
+  }
+  
+  .post-body {
+    height: 75%;
+  }
+  
+  .btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btns-left {
+    display: flex;
+  }
+  
+  .btn-heart-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heart-count {
+    font-size: 10px;
+    margin: 0 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    margin: 0 10px;
+  }
+  
+  .post-body {
+    background-color: azure;
+  }

@@ -14,6 +14,11 @@ app.get("/", (req, res) => {
 
 const nickArray = {}; // 유저 목록
 
+// [실습46] dm 기능 구현
+// 유저 목록 업데이트 (유저 입장. 퇴장시 필요하다)
+function updateList() {
+  io.emit("updateNicks", nickArray); //변화 된것을 넘겨 준다 // {socket.id : nick1, socket.id : nick2, ...} 이런 형식으로 넘어 간다.
+}
 // io.on()
 // : socket과 관련된 통신작업을 처리
 io.on("connection", (socket) => {
@@ -32,7 +37,7 @@ io.on("connection", (socket) => {
     console.log("socket on setNick >> ", nick);
 
     // nickArray: { socketId1: nick1, socketId2: nick2, ... }
-    // -> Object.values(): [ nick1, nick2, nick2, ... ]
+    // -> Object.values(): [ nick1, nick2, nick3, ... ]
     // -> indexOf(): nick 이 존재하는지
     // 힌트: method1().method2().method3()
     if (Object.values(nickArray).indexOf(nick) > -1) {
@@ -44,6 +49,8 @@ io.on("connection", (socket) => {
       console.log("접속 유저 목록 >> ", nickArray);
       io.emit("notice", `${nick}님이 입장하셨습니다.`);
       socket.emit("entrySuccess", nick);
+
+      updateList(); //위에 입장성공한 유저목록을 업데이트 해준다.
     }
   });
 
@@ -57,16 +64,27 @@ io.on("connection", (socket) => {
     //  ex. aa님이 퇴장하셨습니다.
     // 3. nickArray에서 해당 유저 삭제 (객체에서 key-value 쌍 삭제)
     // delete 연산자 활용
+    delete nickArray[socket.id]; //소켓 연결이 끊긴 해당 하는 객체를 삭제 해준다
+
+    updateList(); // 위에 삭제한 유저목록을 업데이트해서 반영해 준다
   });
 
   // [실습45] 채팅창 메세지 전송 Step1
   socket.on("send", (data) => {
     console.log("socket on send >> ", data); //  { myNick: 'a', msg: 'cc' }
 
-    // [실습45] 채팅창 메세지 전송 Step2
-    const sendData = { nick: data.myNick, msg: data.msg };
-    if (data.msg !== "") {
-      io.emit("newMessage", sendData);
+    if (data.dm !== "all") {
+      // [실습46] DM 기능
+      let dmSocketId = data.dm; //특정 유저의 socket id
+      const sendData = { nick: data.myNick, msg: data.msg, dm: "(쑥덕쑥덕)" };
+      io.to(dmSocketId).emit("newMessage", sendData); //특정 소켓아이디에게만 메세지 전송
+      socket.emit("newMessage", sendData); //자기자신에게도 DM 메세지 전송
+    } else {
+      // [실습45] 채팅창 메세지 전송 Step2
+      const sendData = { nick: data.myNick, msg: data.msg };
+      if (data.msg !== "") {
+        io.emit("newMessage", sendData);
+      }
     }
   });
 });
