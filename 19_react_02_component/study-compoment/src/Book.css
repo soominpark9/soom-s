@@ -1,0 +1,13 @@
+.back {
+  width: 500px;
+  height: 600px;
+  background-color: rgb(243, 230, 172);
+  margin: auto;
+}
+
+.main {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(224, 163, 71);
+    padding: 1px;
+}

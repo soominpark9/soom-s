@@ -64,8 +64,8 @@ function App() {
       {/* 4. className 사용
       - class 속성이 아닌 className 속성을 사용
       */}
-      <h3 className="hello" onClick {...() => alert("안녕안녕")}>
-        hello~~~~~~~
+      <h3 className="hello" onClick={() => alert("안녕안녕")}>
+        hello~~~~~~
       </h3>
       {/* 5. 종료 태그가 없는 태그의 사용
       - 기존 html 태그가 없더라도 종료태그를 작성해야 함
@@ -115,6 +115,7 @@ function App() {
       <br />
 
       <div className="a"></div>
+      
       <div className="b"></div>
       <div className="c"></div>
       <div className="d"></div>
