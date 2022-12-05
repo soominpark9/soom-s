@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 //자식 component -> 여기에서만 사용할거라 내보내지 않음 export (x)
 const MyComponent = (props) => {
   const { number } = props;
+  const [text, setText] = useState("");
 
   useEffect(() => {
     //mount시점에 실행되는 것을 확인 새로고침하면 콘솔에 찍힘
@@ -18,15 +19,27 @@ const MyComponent = (props) => {
   //딱 mounting될때만 콘솔에 찍힘!!
   //mount될때만 보기
 
-  // Mount & Unmount 시점에 실행
+  // Mount & Update 시점에 실행 (얘는 잘 안씀 ui환경에서 변경이 일어나는건 잦은일인데 계속 useEffect가 쓰이면 성능에 문제가 될수도있기 떄문에 보통은 mounting될 떄만? 혹은 특정 값을 넣어주면 update될떄 위주로만 쓰인다 unmount도 잘 안쓰이는듯?)
   useEffect(() => {
     console.log("update!!!");
     //자식 컴포넌트의 props가 update되서 리랜딩된다.
-    //plus 버튼 누를떄마다 콘솔에 update가 찍힌다 + 첨시작했을떄 f5눌렀을 떄 mount랑 같이 일단 콘솔에 찍히긴 한다.
+    //plus 버튼 누를떄마다 콘솔에 update가 찍힌다 + 첨시작했을떄 f5눌렀을 떄 기본적으로 mounting 되기 때문에 일단 콘솔에 찍히긴 한다.
   });
+
+  // text가 바뀔때만 실행되도록!! (배열안에 특정 값을 넣어주면 배열안에 값이 쓰일때마다 update실행되도록)
+  useEffect(() => {
+    console.log('only text state update!!!>>>',text)
+  }, [text]);
+
+
   return (
     <>
       <p>Mycomponent{number} </p>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
     </>
   );
 };
