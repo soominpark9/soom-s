@@ -71,10 +71,10 @@ const Prob52 = () => {
               /* comments를 map(반복해준다) c는 객체를 지징하는 가상의 변수를 만들어 넣음
         즉 c = {writer: xxx, title:xxx} */
             }
-
             return (
               <tr key={idx + 1}>
                 <td>{idx + 1}</td>
+                {/* 이런방식보다 state줘서 쓰는 방식을 더 많이 쓴다고 한다 */}
                 {/* 번호 */}
                 <td>{c.title}</td>
                 {/* 제목 */}

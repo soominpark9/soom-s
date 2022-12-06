@@ -1,0 +1,82 @@
+$color-red: red;
+$color-orange: orange;
+$color-yellow: yellow;
+$color-green: green;
+$color-blue: blue;
+$color-indigo: indigo;
+$color-purple: purple;
+$color-black: black;
+$color-skyblue: skyblue;
+$color-skyblue2: rgb(79, 144, 170);
+$color-skyblue3: rgb(9, 85, 116);
+$color-skyblue4: rgb(20, 58, 73);
+$color-skyblue4: rgb(8, 24, 31);
+$color-white: white;
+$color-pink: pink;
+$color-gold: gold;
+$color-darkgreen: darkgreen;
+
+//siza
+$box-size: 150px;
+//animation
+$animation-duration: 0.4s;
+
+//breakpoint
+$breackpoint-md: 768px;
+
+//함수 (매개변수) 넣을 수 있다
+//mixin ->정의부(?)
+//매개변수를 두개를 넣었으면 두개로 불러오고 한개를 썼으면 한개로 불러와야한다.
+@mixin box($w, $h) {
+  width: $w;
+  height: $h;
+  border: 2px solid $color-black;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin wonsize($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin woncolor($color) {
+  background-color: $color;
+}
+
+@mixin keyframe($animation_name,$size) {
+  @keyframes #{$animation_name} {
+    0% {
+      // transform: translate(0px);
+      top: 0;
+      left: 0;
+    }
+
+    25% {
+    //   transform: translateX($size);
+    top: 0;
+    left: $size;
+    }
+
+    50% {
+    //   transform: translateY($size);
+    left: $size;
+    top: $size;
+    }
+    75% {
+    //   transform: translateX(-$size);
+    left: 0;
+    top: $size;
+    }
+    100% {
+      // transform: translate(0px);
+      top: 0;
+      left: 0;
+    }
+  }
+}

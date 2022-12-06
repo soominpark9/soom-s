@@ -1,6 +1,7 @@
 import "./App.css";
 import Alphabet from "./Alphabet";
 import Prob52 from "./Prob52";
+import ProbCopy from "./ProbCopy";
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
       <hr />
       <br />
       <Prob52></Prob52>
+
+      <hr />
+      <br />
+      <ProbCopy></ProbCopy>
     </div>
   );
 }

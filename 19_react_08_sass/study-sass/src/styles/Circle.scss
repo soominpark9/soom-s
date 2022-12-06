@@ -1,0 +1,33 @@
+@import "./utils.scss";
+
+.wons {
+  display: flex;
+  flex-direction: column;
+
+  .won {
+    @include wonsize(100px);
+    position: relative;
+
+    &.pink {
+      @include woncolor(pink);
+      @include keyframe(move, 50px);
+      animation-name: move;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+    &.gold {
+      @include woncolor(gold);
+      @include keyframe(move2, 100px);
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: move2;
+    }
+    &.darkgreen {
+      @include woncolor(darkgreen);
+      @include keyframe(move3, 150px);
+      animation-duration: 2s;
+      animation-name: move3;
+      animation-iteration-count: infinite;
+    }
+  }
+}

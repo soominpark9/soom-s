@@ -1,0 +1,47 @@
+@import "./utils.scss";
+
+.Sass {
+  display: flex;
+
+  .box {
+    // width: $box-size;
+    // height: $box-size;
+    @include box(120px, 100px);
+
+    //.box.red와 같다 중첩안에서 &는 부모 선택자를 의미
+    &.red {
+      background-color: $color-red;
+    }
+    &.orange {
+      background-color: $color-orange;
+    }
+    &.yellow {
+      background-color: $color-yellow;
+    }
+    &.green {
+      background-color: $color-green;
+    }
+    &.blue {
+      background-color: $color-blue;
+    }
+    &.indigo {
+      background-color: $color-indigo;
+    }
+    &.purple {
+      background-color: $color-purple;
+    }
+
+    &:hover {
+      $this-animation: $animation-duration * 2;
+      cursor: pointer;
+      transform: translateY(-50px);
+      transition: transform $this-animation;
+    }
+  }
+}
+
+@media (max-width: #{$breackpoint-md}) {
+  .Sass {
+    flex-direction: column-reverse;
+  }
+}

@@ -82,10 +82,11 @@ const PostList = () => {
   //컴포넌트가 mount된 시점에 2초 기다렸다가 getposts 함수 실행
   useEffect(() => {
     //2초 기다렸다가 getPosts 함수 실행
-    // setTimeout(() => {
+    setTimeout(() => {
       //getPosts 함수 실행
       getPosts();
-    // }, 2000); 지우는 이유는 이제 위에 await를 사용해서 이미 거기부터도 시간이 걸리는 작업이기 때문에 loading이 나올수 있어서 추가적으로 setTime할 필요가 없
+    }, 1500); 
+    // getPosts(); 만 남겨두고 setTIme 함수는 지워도 됨 -> 이유는 이제 위에 await를 사용해서 이미 거기부터도 시간이 걸리는 작업이기 때문에 loading이 나올수 있어서 추가적으로 setTime할 필요가 없
   }, []); //마운팅 될 시점에만 보여줘야 하기 때문에 () => {} 뒤에 추가적으로 빈배열이 필요함
 
   const dataLoaded = posts.map((post) => {

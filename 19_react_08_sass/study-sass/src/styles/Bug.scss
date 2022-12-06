@@ -1,0 +1,56 @@
+@import "./utils.scss";
+
+.Bug {
+  position: absolute;
+
+  .bigEye {
+    background-color: $color-white;
+    @include circle(50px);
+    z-index: 6;
+    margin-left: 300px;
+    margin-top: 40px;
+    position: absolute;
+  }
+
+  .smallEye {
+    background-color: $color-black;
+    @include circle(30px);
+    z-index: 7;
+    position: absolute;
+    margin-left: 303px;
+    margin-top: 45px;
+  }
+  .circle {
+    @include circle(150px);
+
+    &.first {
+      background-color: $color-skyblue;
+      z-index: 1;
+      margin-left: 300px;
+    }
+    &.second {
+      background-color: $color-skyblue2;
+      z-index: 2;
+      margin-left: 370px;
+      margin-top: -35px;
+    }
+    &.third {
+      background-color: $color-skyblue3;
+      z-index: 3;
+      margin-left: 400px;
+      margin-top: -45px;
+    }
+    &.fourth {
+      background-color: $color-skyblue4;
+      z-index: 4;
+      margin-left: 500px;
+      margin-top: -90px;
+    }
+    &.fifth {
+      background-color: $color-skyblue4;
+      z-index: 5;
+      margin-left: 600px;
+      margin-top: -140px;
+    }
+  }
+}

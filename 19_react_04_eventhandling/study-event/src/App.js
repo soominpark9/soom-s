@@ -6,6 +6,7 @@ import Handler from "./ex/Handler_ex";
 import HandlerSecond from "./ex/HandlerSecond";
 import HandlerThird from "./ex/HandlerThird";
 
+
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,8 @@ function App() {
       <br />
       <hr />
       <HandlerThird></HandlerThird>
+
+    
     </div>
   );
 }
