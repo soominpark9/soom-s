@@ -23,7 +23,7 @@ console.log("item3", item3[1]);
 //swqp -> (변수의 값을 교환하는 것)
 
 let x = 1,
-  y = 2;
+y = 2;
 [x, y] = [y, x];
 console.log("x:", x);
 console.log("y:", y);
