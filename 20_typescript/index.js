@@ -63,27 +63,29 @@ Something = [];
 // 같은 이유의 에러 나이가 여기서 unknwon타입으로 지정되있어서 에러가 뜬다 typescript는 엄격하다!
 // 함수안에 파라미터안에도 타입 지정할 수 있다
 function 함수(x) {
-    return x * 2;
+  return x * 2;
 }
 var john = [123, true];
 var park = { name: "park", age: "123" };
 //class 문법 타입 지정
 //변수를 미리지정해서 type 지정을 해야 한다
 var User = /** @class */ (function () {
-    function User(name) {
-        this.name = name;
-    }
-    return User;
-}());
+  function User(name) {
+    this.name = name;
+  }
+  return User;
+})();
 // 사실 타입지정은 자동으로 된다 온갖 곳에 타입을 다 지정할 필요가 없다.
 // 쉴드가 되서 타입지정 문법 생략 가능 let 회원들 = 'park' 만 해도 회원들 위에
 // 커서를 올리면 type 이 string으로 뜬다
 //================================================================================
 //학교라는 변수에 타입지정해보기
 var 학교 = {
-    score: [100, 97, 84],
-    teacher: 'Phil',
-    friend: 'John'
+  score: [100, 97, 84],
+  teacher: "Phil",
+  friend: "John",
 };
 학교.score[4] = false;
-학교.friend = ['Lee', 학교.teacher];
+학교.friend = ["Lee", 학교.teacher];
+
+
