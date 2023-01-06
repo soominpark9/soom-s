@@ -150,35 +150,115 @@ function 가위바위보(a: "가위" | "바위" | "보"): ("가위" | "바위" |
 가위바위보("가위");
 
 //const 변수의 한계
-//변수를 두개이상지정못하잖아 -> literal type 쓰면 두개이상 저장 가능 
+//변수를 두개이상지정못하잖아 -> literal type 쓰면 두개이상 저장 가능
 //literal type은 const 변수와 유사하게 사용 가능
-//그래서 literal type은 const변수의 업그레이드 버전이라고 생각하면된다 
+//그래서 literal type은 const변수의 업그레이드 버전이라고 생각하면된다
 const 변수 = "kim";
 let 접니다: "park" | "패셔니스타";
 
-
-
 //literal type의 문제점
 var 자료 = {
-    name :'kim'
-}
-자료.name //console창에 kim나옴
+  name: "kim",
+};
+자료.name; //console창에 kim나옴
 
-function 내함수(a : 'kim') {
-
-}
-내함수('kim') //literal type이용해서 파라미터로kim만 받을 수 있게 했다
+function 내함수(a: "kim") {}
+내함수("kim"); //literal type이용해서 파라미터로kim만 받을 수 있게 했다
 //내함수(자료.name) --> 하면 에러가 난다 why ?????
-//파라미트 a의 타입은 kim 인데 자료.name의 타입은 string이기 때문에 
-//해결법 1. object만들때 타입을 미리 지정해주던가 var 자료: kim = {} 
+//파라미트 a의 타입은 kim 인데 자료.name의 타입은 string이기 때문에
+//해결법 1. object만들때 타입을 미리 지정해주던가 var 자료: kim = {}
 //해결법 2. as 문법으로 타입을 가짜로 만들던가 (자주쓰는건 좋지 않다)
-//해결법 3. as const 키워드 쓰던가 
+//해결법 3. as const 키워드 쓰던가
 
 var 자료2 = {
-    name :'kim'
-} as const 
+  name: "kim",
+} as const;
 //as const의 object는 literal type 지정 알아서 해주세요 라는 뜻
 
 //as const 효과
 //1. name 위에 커서두고 속성 확인해보면 속성의 타입을 오른쪽에 있는 value로 변경시켜줌
 //2. object 속성들에 모두 readonly를 자동으로 붙어져 있다고 생각하면 됨
+
+//======================================================================================
+
+//함수와 methods에 type alias 지정하는 법
+
+//1.함수type전체를 alias를 가져다 쓸 수 있는 방법
+type 함수타입 = (a: string) => number; //함수타입은 () => {} / number가 리턴타입
+//2.함수 type alias 부착하려면 함수 선언식이아닌 표현식을 써야한다
+let 함수3: 함수타입 = function () {
+  return 10;
+};
+
+type NumOut = (x: number, y: number) => number;
+let ABC: NumOut = function (x, y) {
+  return x + y;
+};
+
+//methods 안에 타입 지정하기
+//object 안에 함수 만들 수 있다
+//여기서 plusOne이 함수다
+//object 안의 함수 지정은 어떻게?
+//함수에 파라미터가 있는데 타입지정안하면 혼남 즉 에러뜸
+type Member = {
+  name: string;
+  age: number;
+  plusOne: (x: number) => number;
+  changeName: () => void;
+};
+
+let 회원정보: Member = {
+  name: "kim",
+  age: 30,
+  plusOne(a) {
+    return a + 1;
+  },
+  changeName: () => {
+    console.log("안녕");
+  }, //얘도 만든 표현식 함수
+};
+회원정보.plusOne(1); //plusOne함수안에 있는 내용이 실행
+회원정보.changeName();
+
+//숙제를 위한 콜백 함수 개념
+//함수안에 들어간 함수를 콜백 함수라고 한다
+
+function 함수5(a) {
+  a();
+}
+function 함수6() {}
+함수5(함수6); //1.함수 5내부 코드 a()이 실행됨 2. 근데 파라미타를 a자리에 집어넣어 함수6() 실행됨
+//함수에다가 함수 집어넣어 실행시키는 일종의 패턴이다
+
+//실습
+/*다음 함수2개를 만들어보고 타입까지 정의해보십시오.
+- cutZero()라는 함수를 만듭시다. 이 함수는 문자를 하나 입력하면 맨 앞에 '0' 문자가 있으면 제거하고 문자 type으로 return 해줍니다.
+- removeDash()라는 함수를 만듭시다. 이 함수는 문자를 하나 입력하면 대시기호 '-' 가 있으면 전부 제거해주고 그걸 숫자 type으로 return 해줍니다. 
+- 함수에 타입지정시 type alias를 꼭 써보도록 합시다.  */
+
+type CutType = (x: string) => string;
+
+let cutZero: CutType = function (x) {
+  let result = x.replace(/^0+/, "");
+  return result;
+};
+function removeDash(x: string): number {
+  let result = x.replace(/-/g, "");
+  return parseFloat(result);
+}
+
+/*함수에 함수를 집어넣고 싶습니다.
+
+숙제2에서 만든 함수들을 파라미터로 넣을 수 있는 함수를 제작하고 싶은 것입니다. 
+이 함수는 파라미터 3개가 들어가는데 첫째는 문자, 둘째는 함수, 셋째는 함수를 집어넣을 수 있습니다. 이 함수를 실행하면
+1. 첫째 파라미터를 둘째 파라미터 (함수)에 파라미터로 집어넣어줍니다.
+2. 둘째 파라미터 (함수)에서 return된 결과를 셋째 파라미터(함수)에 집어넣어줍니다.
+3. 셋째 파라미터 (함수)에서 return된 결과를 콘솔창에 출력해줍니다. 
+이 함수는 어떻게 만들면 될까요?
+둘째 파라미터엔 cutZero, 셋째 파라미터엔 removeDash 라는 함수들만 입력할 수 있게 파라미터의 타입도 지정해봅시다. */
+function 만들함수(a, func1, func2){
+    let result = func1(a);
+    let result2 = func2(result);
+    console.log(result2)
+  }
+  만들함수('010-1111-2222', cutZero, removeDash) 
