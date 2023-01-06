@@ -80,7 +80,7 @@ Something = [];
 // 같은 이유의 에러 나이가 여기서 unknwon타입으로 지정되있어서 에러가 뜬다 typescript는 엄격하다!
 
 // 함수안에 파라미터안에도 타입 지정할 수 있다
-function 함수(x: number): number {
+function 함수55(x: number): number {
   return x * 2;
 }
 // 여기서 (x :number) :number 두번쨰 :number 은 return으로 어떤 type이 return될지도 쓸 수 있다.
@@ -152,7 +152,7 @@ function 함수3(x: number): void {
 // 파라미터값 x옆에 물음표?를 넣어주면 된다
 // 오브젝트의 경우에도 key 값 옆에 {age?:number} 이렇게 물음표 넣어주면 이거랑 똑같은 상황이 된다
 function 함수4(x?: number): void {}
-함수(0);
+
 
 // 물음표의 뜻이란 변수: number | undefined와 똑같은 의미
 

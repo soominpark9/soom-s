@@ -98,7 +98,7 @@ let 테스트용변수2: Email = {
 2. 미성년자 여부 속성은 true/false만 들어올 수 있습니다. 
 3. 멋있게 숙제2에서 만들어둔  type alias를 재활용해봅시다*/
 
-type User = {
+type User2 = {
   name: string;
   phone: number;
   email?: string;
@@ -106,7 +106,7 @@ type User = {
 
 type Adult = { adult: boolean };
 
-type NewUser = User & Adult;
+type NewUser = User2 & Adult;
 
 let 회원가입정보: NewUser = {
   name: "kim",
@@ -119,7 +119,7 @@ let 회원가입정보: NewUser = {
 //만드는법
 //1. string,number 이런것만 타입이 될 수있는게 아니라
 //일반 글자같은 것도 타입이 될 수 있다.
-let john: "대머리";
+let choi: "대머리";
 let kim: "솔로";
 //위에 만든 타입은 마음대로 변수나 함수에 할당 가능하다
 //신기하게도 john이라는 변수는 이제 대머리라는 글자만 할당할 수 있고
@@ -186,7 +186,7 @@ var 자료2 = {
 //1.함수type전체를 alias를 가져다 쓸 수 있는 방법
 type 함수타입 = (a: string) => number; //함수타입은 () => {} / number가 리턴타입
 //2.함수 type alias 부착하려면 함수 선언식이아닌 표현식을 써야한다
-let 함수3: 함수타입 = function () {
+let 함수10: 함수타입 = function () {
   return 10;
 };
 
@@ -200,14 +200,14 @@ let ABC: NumOut = function (x, y) {
 //여기서 plusOne이 함수다
 //object 안의 함수 지정은 어떻게?
 //함수에 파라미터가 있는데 타입지정안하면 혼남 즉 에러뜸
-type Member = {
+type Member2 = {
   name: string;
   age: number;
   plusOne: (x: number) => number;
   changeName: () => void;
 };
 
-let 회원정보: Member = {
+let 회원정보: Member2 = {
   name: "kim",
   age: 30,
   plusOne(a) {
