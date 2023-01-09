@@ -49,4 +49,41 @@
   }
   new Hero();
   var garen = new Hero("strike2", "courage2");
+
+  //js문법 prototype 문법 짚어보기
+  //prototype이라는 거 써도 자식object 에게 데이터 물려 줄 수 있다
+  //콘솔에 위에 만든 기계.prototype을 넣어보면 내가 생성한적이 없지만 공간이 나오는데
+  //prototype은 원형이라 하는데 쉽게 말하 유전자 라고 생각 하면 된다
+
+  //.name 찍어서 object 추가 처럼 추가 할 수 있다
+  //즉 prototype에 뭔가 추가하면 자식들이 전부 사용 가능하다는 뜻
+  기계.prototype.name = "kim";
+
+  //우리는 한번도 nunu나 garen에 name을 추가 한적이 없지만
+  //콘솔에 nunu.name을 하면 kim이 나온다 왜??
+  //부모 유전자 에 추가가 됬기 때문에 자식요소는 당연히 사용할 수 있다
+
+  // 즉 -> 위에 function안에다가 쓰면 자식이 해당 내용을 직접 가지게되고
+  // prototype 뒤에 추가하면 부모만 가지게 된다 그 후 자식이 끌어다 쓰는 형태
+
+  //부모 유전자에 있는걸 자식이 사용 가능한 이유? (원리)
+  nunu.name; //object에서 데이터 뽑기 -> 출력
+  //nunu 가 name을 가지고 있지 않다면 -> nunu 유전자로 올라가서 찾는다 그래서 부모 유전자를 가져다 쓸 수 있게되는 것이다
+
+  //array자료형
+  var 어레이 = [4, 2, 1]; //사람입장에서 편리한 방식
+  어레이.sort();
+  어레이.length;
+
+  var어레이 = new Array(4, 2, 1); //컴퓨터 입장에서 array생성하는 방식
+  //우리가 sort(), lenth()를 추가해준적이 없지만 array 자료에 .sort() 을 붙일 수 있는 이유는??!
+  //Array.prototype을 해보면 쓸 수 있는 속성이 쫙나온다
+  //결국 [] -> array형식 자료형을 사용하는 순간 자식 한테는 sort가 없어도
+  //부모한테는 있기 때문에 끌어와서 사용할 수 있는 원리 라는 것
+
+  //(응용)모든  array 자료에서 쓸 수 있는 함수 추가 ?
+  Array.prototype.함수 = function () {};
+  //앞으로는 모든 Arrya에서는 위에 만든 .함수를가져다 쓸 수 있다
+  var 어레이 = [4, 2, 1];
+  어레이.함수() //undefined나오긴 하지만 에러안뜸 글고 아직 함수 내용을 안채워서 undefined나오는 것 
 </script>
