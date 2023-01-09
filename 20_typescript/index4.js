@@ -1,0 +1,33 @@
+//ES6 신 문법에서는 class 만들 때 타입스크립트로 타입 지정 가능
+var Person1 = /** @class */ (function () {
+    //typescript constructor() 는 필드값에 추가하려는 name의 속성을 적어줘야 this.어쩌구 가능
+    //이게 자바스크립트랑 타입스크립트의 가장 큰 차이점
+    function Person1(a) {
+        //constructor 파라미터 지정 가능
+        //return 타입 지정은 할 필요 없 -> 복제되는게 항상 object인데 return 타입 지정할 이유 없음
+        //당연히 함수와 관련된 모든 문법들  rest parameter ,default parameter등 가능
+        this.name = a;
+    }
+    //프로토타입의 값이나 함수를 추가 하고 싶으면 여기에 추가해주면 된다
+    //프로토타입 함수 지정해서 쓰면된다
+    //return이 있길 원하면 return타입도 지정해주면 좋다
+    Person1.prototype.함수 = function (a) {
+        console.log("안녕" + a);
+    };
+    return Person1;
+}());
+//   new Person1(); //person1안에 있던 속성을 물려받은 object가 남음
+var 사람1 = new Person1("kim"); //변수에다가 저장해서 써도됨 //파라미터자리에 kim넣으면 kim나옴
+var 사람2 = new Person1("park"); //park 출력
+사람1.함수("안녕"); //안녕을 a라는 파라미터에 넣어 함수를 실행해주세요 ->안녕안녕
+console.log(사람1);
+console.log(사람2);
+var Person2 = /** @class */ (function () {
+    function Person2() {
+        this.data = 0; //필드 값 -> class 필드값 (=constructor 와 똑같은 역할을 한다)
+    }
+    return Person2;
+}());
+new Person2(); //person2안에 있던 속성을 물려받은 object가 남음
+var 사람3 = new Person2();
+console.log(사람3.data);
