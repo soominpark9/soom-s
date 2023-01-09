@@ -1,0 +1,52 @@
+<script>
+  //javascript 문법 - class 키워드 알아보기
+  //object 자료형으로 LoL캐릭터들의 정보를 정리하자
+
+  //q를 누르면 q에 해당하는 능력이 w를 누르면 w에 해당하는 능력이 나간다는 전제
+  var nunu = {
+    q: "consume",
+    w: "snowball",
+  };
+
+  var garen = {
+    q: "strike",
+    w: "courage",
+  };
+  //근데 지금 여기 2개만 저장해서 그렇지 캐릭터가 100개라고 하면 날밤새서 해도
+  //안끝난다 이럴떄 이걸 쉽게 하는 문법이 존재한다. 바로 class란 문법
+  //class를 쓰면 비슷한 pbject 많이 만들일 있을때 사용하면 무한정 만들어 낼 수 있다
+  //class 문법 쓰면 한줄컷 = class는 object 뽑는 기계일뿐!!
+
+  //this라는게 있는한 기계 가 class역할을 해주게 된다 function 기계 = class 기계
+  //this = 기계로 부터 생성되는 object (=멋진말로instance)
+
+  //새로 생성되는 object에 {q: 'consume'} 추가해주세요
+  //새로 생성되는 object에 {w: 'snowball'} 추가해주세요 이뜻
+  function 기계() {
+    this.q = "consume";
+    this.w = "snowball";
+  }
+  // 기계로 부터 object를 뽑아 쓰고 싶을 떄
+  // 이게 자바스크립트 객체 지향에 핵심 내용이라 한다
+  var nunu = new 기계(); //한줄컷
+  var garen = new 기계();
+
+  //근데 이렇게되면 nunu랑 garden이 속성이 똑같이 나온다 그럴경우 파라미터를 채워서 사용해주면 된다
+  //그럼 파라미터 스킬을 바꿀때마다 해당내용이 this에 들어간다
+  function 기계2(스킬, 스킬2) {
+    this.q = 스킬;
+    this.w = 스킬2;
+  }
+  var garen = new 기계2("strike", "courage");
+
+  //위에는 옛날 문법이고 이걸 ES6 신문법으로 바꿔보자!!!! 2016년이후
+
+  class Hero {
+    constructor(스킬, 스킬2) {
+      this.q = 스킬;
+      this.w = 스킬2;
+    }
+  }
+  new Hero();
+  var garen = new Hero("strike2", "courage2");
+</script>
